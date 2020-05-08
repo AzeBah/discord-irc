@@ -27,12 +27,20 @@ namespace WindowsFormsApp1
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private async void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            await Task.Run(() =>
+            {
+                Discord discordUser = new Discord(emailTextBox.Text, passwordTextBox.Text);
+            });
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
