@@ -44,6 +44,10 @@ namespace WindowsFormsApp1
             {
                 this.Close();
             }
+            else
+            {
+                MessageBox.Show("Wrong credentials ;u");
+            }
         }
 
 
