@@ -27,7 +27,7 @@ namespace WindowsFormsApp1
 
         }
 
-        private async void textBox1_TextChanged(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
             
         }
@@ -36,7 +36,7 @@ namespace WindowsFormsApp1
         {
             await Task.Run(() =>
             {
-                Discord discordUser = new Discord(emailTextBox.Text, passwordTextBox.Text);
+                DiscordLogging discordUser = new DiscordLogging(emailTextBox.Text, passwordTextBox.Text);
             });
         }
 
