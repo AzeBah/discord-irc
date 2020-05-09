@@ -14,6 +14,7 @@ namespace WindowsFormsApp1
         private string password;
         private string xFingerPrint;
         private string userToken;
+        public static bool isLogged = false;
         public DiscordLogging(string email, string password)
         {
             this.email = email;
@@ -79,6 +80,7 @@ namespace WindowsFormsApp1
                     position = response.IndexOf('"');
                     int secondPos = response.IndexOf('"', position + 1);
                     this.userToken = response.Substring(position, (secondPos - position));
+                    isLogged = true;
                 }
             }
             catch (WebException) { }

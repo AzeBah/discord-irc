@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -38,11 +39,20 @@ namespace WindowsFormsApp1
             {
                 DiscordLogging discordUser = new DiscordLogging(emailTextBox.Text, passwordTextBox.Text);
             });
+
+            if (DiscordLogging.isLogged == true)
+            {
+                this.Close();
+            }
         }
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
+
+       
+
     }
 }
