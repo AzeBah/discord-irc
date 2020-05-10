@@ -90,10 +90,6 @@ namespace WindowsFormsApp1
                 {
                     string response = reader.ReadToEnd();
                     List<Message> messages = System.Text.Json.JsonSerializer.Deserialize<List<Message>> (response);
-                    foreach (var elements in messages)
-                    {
-                        Console.WriteLine("message id : " + elements.id + " || content : " + elements.content);
-                    }
                 }
             }
             catch (WebException) { }

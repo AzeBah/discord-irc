@@ -38,16 +38,17 @@ namespace WindowsFormsApp1
             await Task.Run(() =>
             {
                 DiscordLogging discordUser = new DiscordLogging(emailTextBox.Text, passwordTextBox.Text);
+                emailTextBox.Text = "";
+                passwordTextBox.Text = "";
+                if (DiscordLogging.isLogged == true)
+                {
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Wrong credentials ;u");
+                }
             });
-
-            if (DiscordLogging.isLogged == true)
-            {
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Wrong credentials ;u");
-            }
         }
 
 
