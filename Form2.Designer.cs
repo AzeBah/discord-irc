@@ -63,6 +63,7 @@
             this.watchBtn.TabIndex = 2;
             this.watchBtn.Text = "Watch";
             this.watchBtn.UseVisualStyleBackColor = true;
+            this.watchBtn.Click += new System.EventHandler(this.watchBtn_Click);
             // 
             // Form2
             // 

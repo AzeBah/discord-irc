@@ -39,5 +39,13 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private async void watchBtn_Click(object sender, EventArgs e)
+        {
+            await Task.Run(() =>
+            {
+                DiscordChannel channel = new DiscordChannel(channelIdTextBox.Text);
+            });
+        }
     }
 }

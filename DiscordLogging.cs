@@ -75,10 +75,10 @@ namespace WindowsFormsApp1
                 using (StreamReader reader = new StreamReader(resp.GetResponseStream()))
                 {
                     string response = reader.ReadToEnd();
-                    int position = response.IndexOf("token");
-                    position = response.IndexOf(':');
-                    position = response.IndexOf('"');
-                    int secondPos = response.IndexOf('"', position + 1);
+                    int position = response.IndexOf(":");
+                    position = response.IndexOf('"', position);
+                    position++;
+                    int secondPos = response.IndexOf('"', position);
                     userToken = response.Substring(position, (secondPos - position));
                     isLogged = true;
                 }
