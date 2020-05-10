@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.channelIdTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.watchBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // channelIdTextBox
@@ -54,12 +55,22 @@
             this.label1.Text = "Channel ID to watch :";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // watchBtn
+            // 
+            this.watchBtn.Location = new System.Drawing.Point(596, 36);
+            this.watchBtn.Name = "watchBtn";
+            this.watchBtn.Size = new System.Drawing.Size(106, 29);
+            this.watchBtn.TabIndex = 2;
+            this.watchBtn.Text = "Watch";
+            this.watchBtn.UseVisualStyleBackColor = true;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(976, 441);
+            this.Controls.Add(this.watchBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.channelIdTextBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -79,5 +90,6 @@
 
         private System.Windows.Forms.TextBox channelIdTextBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button watchBtn;
     }
 }
