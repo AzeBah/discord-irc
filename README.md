@@ -1,5 +1,5 @@
 # discordSelfBot
-Bot or self-bot for discord
+It's a custom discord client with self-bot functionality
 
 
 
