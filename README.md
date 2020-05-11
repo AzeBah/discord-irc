@@ -10,4 +10,4 @@ Log in
 
 
 Watch a specific channel id for messages
-![WatchChannel](https://i.imgur.com/oXjOj31.png)
+![WatchChannel](https://i.imgur.com/v2LjX1s.png)
