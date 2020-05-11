@@ -46,11 +46,7 @@ namespace WindowsFormsApp1
             await Task.Run(() =>
             {
                 DiscordChannel channel = new DiscordChannel(channelIdTextBox.Text);
-                while (true)
-                {
-                    BeginInvoke(new Action(CheckMessages));
-                    Thread.Sleep(5000);
-                }
+                BeginInvoke(new Action(CheckMessages));
             });
         }
 
@@ -64,7 +60,7 @@ namespace WindowsFormsApp1
         private void CheckMessages()
         {
             channelMsgsTextBox.Text = "";
-            for (int i = DiscordChannel.messages.Count - 1; i > 0; i--)
+            for (int i = DiscordChannel.messages.Count -1; i >= 0; i--)
             {
                 channelMsgsTextBox.Text += DiscordChannel.messages[i].author.username + " : " + DiscordChannel.messages[i].content + Environment.NewLine;
             }
