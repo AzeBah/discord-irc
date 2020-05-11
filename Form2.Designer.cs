@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.watchBtn = new System.Windows.Forms.Button();
             this.channelMsgsTextBox = new System.Windows.Forms.TextBox();
+            this.messageTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // channelIdTextBox
@@ -78,12 +79,24 @@
             this.channelMsgsTextBox.TabIndex = 3;
             this.channelMsgsTextBox.TextChanged += new System.EventHandler(this.channelMsgsTextBox_TextChanged);
             // 
+            // messageTextBox
+            // 
+            this.messageTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.messageTextBox.Location = new System.Drawing.Point(136, 375);
+            this.messageTextBox.Name = "messageTextBox";
+            this.messageTextBox.Size = new System.Drawing.Size(629, 31);
+            this.messageTextBox.TabIndex = 4;
+            this.messageTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            this.messageTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.messageTextBox_KeyDown);
+            this.messageTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.messageTextBox_KeyUp);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(976, 441);
+            this.Controls.Add(this.messageTextBox);
             this.Controls.Add(this.channelMsgsTextBox);
             this.Controls.Add(this.watchBtn);
             this.Controls.Add(this.label1);
@@ -107,5 +120,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button watchBtn;
         private System.Windows.Forms.TextBox channelMsgsTextBox;
+        private System.Windows.Forms.TextBox messageTextBox;
     }
 }

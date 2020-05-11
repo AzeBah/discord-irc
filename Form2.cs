@@ -69,7 +69,23 @@ namespace WindowsFormsApp1
             }
         }
 
-       
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+        }
 
+        private void messageTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                messageTextBox.Text = "";
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void messageTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }
