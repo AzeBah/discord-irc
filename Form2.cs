@@ -45,8 +45,14 @@ namespace WindowsFormsApp1
         {
             await Task.Run(() =>
             {
-                DiscordChannel channel = new DiscordChannel(channelIdTextBox.Text);
-                BeginInvoke(new Action(CheckMessages));
+                while (true)
+                {
+                    DiscordChannel channel = new DiscordChannel(channelIdTextBox.Text);
+                    BeginInvoke(new Action(CheckMessages));
+                    Thread.Sleep(1000);
+                }
+                //DiscordChannel channel = new DiscordChannel(channelIdTextBox.Text);
+                //BeginInvoke(new Action(CheckMessages));
             });
         }
 
