@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -45,7 +46,31 @@ namespace WindowsFormsApp1
             await Task.Run(() =>
             {
                 DiscordChannel channel = new DiscordChannel(channelIdTextBox.Text);
+                while (true)
+                {
+                    BeginInvoke(new Action(CheckMessages));
+                    Thread.Sleep(5000);
+                }
             });
         }
+
+        private void channelMsgsTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        // check every 5 seconds for new messages & place them in the textbox
+        private void CheckMessages()
+        {
+            channelMsgsTextBox.Text = "";
+            for (int i = DiscordChannel.messages.Count - 1; i > 0; i--)
+            {
+                channelMsgsTextBox.Text += DiscordChannel.messages[i].author.username + " : " + DiscordChannel.messages[i].content + Environment.NewLine;
+            }
+        }
+
+       
+
     }
 }

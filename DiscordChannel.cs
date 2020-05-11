@@ -64,6 +64,7 @@ namespace WindowsFormsApp1
     class DiscordChannel
     {
         private string channelId;
+        public static List<Message> messages = new List<Message>(); 
         public DiscordChannel(string channelId)
         {
             this.channelId = channelId;
@@ -89,7 +90,7 @@ namespace WindowsFormsApp1
                 using (StreamReader reader = new StreamReader(resp.GetResponseStream()))
                 {
                     string response = reader.ReadToEnd();
-                    List<Message> messages = System.Text.Json.JsonSerializer.Deserialize<List<Message>> (response);
+                    messages = System.Text.Json.JsonSerializer.Deserialize<List<Message>> (response);
                 }
             }
             catch (WebException) { }
