@@ -63,8 +63,10 @@ namespace WindowsFormsApp1
 
     class DiscordChannel
     {
+        private static Random randomNum = new Random();
         private string channelId;
         public static List<Message> messages = new List<Message>(); 
+
         public DiscordChannel(string channelId)
         {
             this.channelId = channelId;
@@ -94,6 +96,42 @@ namespace WindowsFormsApp1
                 }
             }
             catch (WebException) { }
+        }
+
+        private static string GenerateNonce()
+        {
+            string generatedNonce = "";
+            for (int i = 0; i < 18; i++)
+            {
+                int randomNumber = randomNum.Next(0, 9);
+                generatedNonce += Convert.ToString(randomNumber);
+            }
+            return generatedNonce;
+        }
+
+        // request to send a specific message to a channel
+        public void SendMessage(string message)
+        {
+            HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create("https://discord.com/api/v6/channels/" + this.channelId + "/messages");
+            req.Method = "POST";
+            req.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36";
+            req.ContentType = "application/json";
+            req.Headers.Add("X-Super-Properties", "");
+            req.Headers.Add("Authorization", DiscordLogging.userToken);
+            req.Timeout = 5000;
+            string postData = "{\"content\":\"" + message + "\",\"nonce\":\"" + GenerateNonce() + "\",\"tts\":false}";
+            byte[] data = Encoding.ASCII.GetBytes(postData);
+
+            try
+            {
+                using (Stream writer = req.GetRequestStream())
+                {
+                    writer.Write(data, 0, data.Length);
+                }
+                HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
+            }
+            catch (WebException) { }
+
         }
     }
 }

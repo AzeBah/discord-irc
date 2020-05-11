@@ -49,10 +49,7 @@ namespace WindowsFormsApp1
                 {
                     DiscordChannel channel = new DiscordChannel(channelIdTextBox.Text);
                     BeginInvoke(new Action(CheckMessages));
-                    Thread.Sleep(1000);
                 }
-                //DiscordChannel channel = new DiscordChannel(channelIdTextBox.Text);
-                //BeginInvoke(new Action(CheckMessages));
             });
         }
 
