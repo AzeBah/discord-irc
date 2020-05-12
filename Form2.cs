@@ -48,7 +48,10 @@ namespace WindowsFormsApp1
                 while (true)
                 {
                     DiscordChannel channel = new DiscordChannel(channelIdTextBox.Text);
-                    BeginInvoke(new Action(CheckMessages));
+                    if (InvokeRequired)
+                    {
+                        BeginInvoke(new Action(CheckMessages));
+                    }
                 }
             });
         }
