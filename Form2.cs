@@ -56,6 +56,7 @@ namespace WindowsFormsApp1
                     {
                         BeginInvoke(new Action(CheckMessages));
                     }
+                    Thread.Sleep(300);
                 }
             });
         }
