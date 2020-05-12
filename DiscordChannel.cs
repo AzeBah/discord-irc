@@ -64,12 +64,12 @@ namespace WindowsFormsApp1
     class DiscordChannel
     {
         private static Random randomNum = new Random();
-        private string channelId;
+        private static string channelId;
         public static List<Message> messages = new List<Message>(); 
 
-        public DiscordChannel(string channelId)
+        public DiscordChannel(string channelID)
         {
-            this.channelId = channelId;
+            channelId = channelID;
             GetMessagesFromChannel();
         }
 
@@ -79,7 +79,7 @@ namespace WindowsFormsApp1
         // request to get the 50 last messages sent in a specific channel
         private void GetMessagesFromChannel()
         {
-            HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create("https://discord.com/api/v6/channels/" + this.channelId + "/messages?limit=50");
+            HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create("https://discord.com/api/v6/channels/" + channelId + "/messages?limit=50");
             req.Method = "GET";
             req.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36";
             req.Referer = "https://discord.com/channels/@me";
@@ -110,9 +110,9 @@ namespace WindowsFormsApp1
         }
 
         // request to send a specific message to a channel
-        public void SendMessage(string message)
+        public static Task SendMessage(string message)
         {
-            HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create("https://discord.com/api/v6/channels/" + this.channelId + "/messages");
+            HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create("https://discord.com/api/v6/channels/" + channelId + "/messages");
             req.Method = "POST";
             req.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36";
             req.ContentType = "application/json";
@@ -129,8 +129,12 @@ namespace WindowsFormsApp1
                     writer.Write(data, 0, data.Length);
                 }
                 HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
+                return Task.CompletedTask;
             }
-            catch (WebException) { }
+            catch (WebException)
+            {
+                return Task.CompletedTask;
+            }
 
         }
     }

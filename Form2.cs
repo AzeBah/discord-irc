@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form2 : Form
     {
+        private string messageToSend;
         public Form2()
         {
             InitializeComponent();
@@ -77,17 +78,31 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void ClearMessageTextBox()
+        {
+            messageTextBox.Text = "";
+        }
+
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
         }
 
-        private void messageTextBox_KeyDown(object sender, KeyEventArgs e)
+        private async void messageTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                messageTextBox.Text = "";
                 e.Handled = true;
                 e.SuppressKeyPress = true;
+                this.messageToSend = messageTextBox.Text;
+                messageTextBox.Text = "";
+                await DiscordChannel.SendMessage(messageToSend);
+                //await Task.Run(() =>
+                //{
+                //    e.Handled = true;
+                //    e.SuppressKeyPress = true;
+                //    DiscordChannel.SendMessage(messageTextBox.Text);
+                //    messageTextBox.Text = "";
+                //});
             }
         }
 
