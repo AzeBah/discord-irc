@@ -95,14 +95,7 @@ namespace WindowsFormsApp1
                 e.SuppressKeyPress = true;
                 this.messageToSend = messageTextBox.Text;
                 messageTextBox.Text = "";
-                await DiscordChannel.SendMessage(messageToSend);
-                //await Task.Run(() =>
-                //{
-                //    e.Handled = true;
-                //    e.SuppressKeyPress = true;
-                //    DiscordChannel.SendMessage(messageTextBox.Text);
-                //    messageTextBox.Text = "";
-                //});
+                new Thread(() => DiscordChannel.SendMessage(messageToSend)).Start(); ;
             }
         }
 
