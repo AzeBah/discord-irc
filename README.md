@@ -10,7 +10,7 @@ Features -
 - Keep the 50 last messages in the memory
 
 
-# how-to-use
+# How-To-Use
 1) Download this folder - https://github.com/AzeBah/discord-irc/tree/master/compiledVersion
 2) Run Discord.exe
 3) Use your account and feel free to modify the source code 
