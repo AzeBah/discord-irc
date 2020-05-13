@@ -1,4 +1,4 @@
-# discordSelfBot
+# discord-irc
 It's a custom irc discord client with self-bot functionalities
 
 
