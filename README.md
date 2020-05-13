@@ -11,7 +11,7 @@ Features -
 
 
 # How-To-Use
-1) Download this folder - https://github.com/AzeBah/discord-irc/tree/master/compiledVersion
+1) Download this folder - https://github.com/AzeBah/discord-irc/releases/tag/1
 2) Run Discord.exe
 3) Use your account and feel free to modify the source code 
 
