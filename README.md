@@ -16,9 +16,12 @@ Features -
 3) Use your account and feel free to modify the source code 
 
 
-Log in 
+- Log in 
 ![login](https://i.imgur.com/tRfWruo.png)
 
 
-Watch a specific channel id for messages
+- Watch a specific channel id for messages
 ![WatchChannel](https://i.imgur.com/v2LjX1s.png)
+
+- Send Message & intercept them
+![SendMessage](https://i.imgur.com/Kxk0Yh5.gif)
