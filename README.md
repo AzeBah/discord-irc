@@ -7,7 +7,7 @@ Features -
 - Working login system
 - Working retrieve channel messages
 - Working sending message to the discord channel
-
+- Keep the 50 last messages in the memory
 
 Log in 
 ![login](https://i.imgur.com/tRfWruo.png)
