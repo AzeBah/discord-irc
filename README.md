@@ -1,5 +1,5 @@
 # discordSelfBot
-It's a custom discord client with self-bot functionalities
+It's a custom irc discord client with self-bot functionalities
 
 
 Features -
