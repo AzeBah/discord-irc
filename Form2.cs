@@ -76,6 +76,7 @@ namespace WindowsFormsApp1
             {
                 channelMsgsTextBox.Text += DiscordChannel.messages[i].author.username + " : " + DiscordChannel.messages[i].content + Environment.NewLine;
             }
+            channelMsgsTextBox.AppendText(" ");
         }
 
         private void ClearMessageTextBox()
