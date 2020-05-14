@@ -14,7 +14,7 @@ Features -
 - Log with a token (user and/or bot token)
 
 # How-To-Use
-1) Download this folder - https://github.com/AzeBah/discord-irc/releases/tag/1
+1) Download this folder - https://github.com/AzeBah/discord-irc/releases/tag/1.0
 2) Run Discord.exe
 3) Use your account and feel free to modify the source code  
 
