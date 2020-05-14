@@ -68,7 +68,6 @@ namespace WindowsFormsApp1
         }
 
 
-        // check every 5 seconds for new messages & place them in the textbox
         private void CheckMessages()
         {
             channelMsgsTextBox.Text = "";
