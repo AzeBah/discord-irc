@@ -7,13 +7,13 @@ Features -
 - Working login system
 - Working retrieve channel messages
 - Working sending message to the discord channel
-- Keep the 50 last messages in the memory
+- Keep the 50 last messages in the memory (less ram usage :p)
 
 
 # How-To-Use
 1) Download this folder - https://github.com/AzeBah/discord-irc/releases/tag/1
 2) Run Discord.exe
-3) Use your account and feel free to modify the source code (less ram usage :p)
+3) Use your account and feel free to modify the source code  
 
 
 Log in 
