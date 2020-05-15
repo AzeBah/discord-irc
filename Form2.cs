@@ -49,14 +49,7 @@ namespace WindowsFormsApp1
                 while (true)
                 {
                     DiscordChannel channel = new DiscordChannel(channelIdTextBox.Text);
-                    if (InvokeRequired)
-                    {
-                        Invoke(new Action(CheckMessages));
-                    }
-                    else
-                    {
-                        BeginInvoke(new Action(CheckMessages));
-                    }
+                    BeginInvoke(new Action(CheckMessages));
                     Thread.Sleep(500);
                 }
             });
@@ -93,7 +86,19 @@ namespace WindowsFormsApp1
             {
                 if (channelMsgsTextBox.Text.Contains("/delete"))
                 {
+                    try
+                    {
+                        int position = channelMsgsTextBox.Text.IndexOf(" ");
 
+                    }
+                    catch (Exception)
+                    {
+                        e.Handled = true;
+                        e.SuppressKeyPress = true;
+                        this.messageToSend = messageTextBox.Text;
+                        messageTextBox.Text = "";
+                        new Thread(() => DiscordChannel.SendMessage(messageToSend)).Start();
+                    }
                 }
                 else
                 { 
