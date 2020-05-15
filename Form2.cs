@@ -91,11 +91,18 @@ namespace WindowsFormsApp1
         {
             if (e.KeyCode == Keys.Enter)
             {
-                e.Handled = true;
-                e.SuppressKeyPress = true;
-                this.messageToSend = messageTextBox.Text;
-                messageTextBox.Text = "";
-                new Thread(() => DiscordChannel.SendMessage(messageToSend)).Start(); ;
+                if (channelMsgsTextBox.Text.Contains("/delete"))
+                {
+
+                }
+                else
+                { 
+                    e.Handled = true;
+                    e.SuppressKeyPress = true;
+                    this.messageToSend = messageTextBox.Text;
+                    messageTextBox.Text = "";
+                    new Thread(() => DiscordChannel.SendMessage(messageToSend)).Start();
+                }
             }
         }
 
