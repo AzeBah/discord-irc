@@ -89,7 +89,7 @@ namespace WindowsFormsApp1
                     try
                     {
                         int position = channelMsgsTextBox.Text.IndexOf(" ");
-
+                        int amountOfMsgsToDelete = Convert.ToInt32(channelMsgsTextBox.Text.Substring(position+1));
                     }
                     catch (Exception)
                     {
