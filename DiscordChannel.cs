@@ -132,7 +132,25 @@ namespace WindowsFormsApp1
             catch (WebException)
             {
             }
+        }
 
+
+        // request to delete a specific message in a specific message
+        public static void DeleteMessages(string messageID)
+        {
+            HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create("https://discord.com/api/v6/channels/" + channelId + "/messages/" + messageID);
+            req.Method = "DELETE";
+            req.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36";
+            req.Headers.Add("X-Super-Properties", "eyJvcyI6IldpbmRvd3MiLCJicm93c2VyIjoiQ2hyb21lIiwiZGV2aWNlIjoiIiwiYnJvd3Nlcl91c2VyX2FnZW50IjoiTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzgxLjAuNDA0NC4xMzggU2FmYXJpLzUzNy4zNiIsImJyb3dzZXJfdmVyc2lvbiI6IjgxLjAuNDA0NC4xMzgiLCJvc192ZXJzaW9uIjoiMTAiLCJyZWZlcnJlciI6Imh0dHBzOi8vZGlzY29yZGFwcC5jb20vIiwicmVmZXJyaW5nX2RvbWFpbiI6ImRpc2NvcmRhcHAuY29tIiwicmVmZXJyZXJfY3VycmVudCI6IiIsInJlZmVycmluZ19kb21haW5fY3VycmVudCI6IiIsInJlbGVhc2VfY2hhbm5lbCI6InN0YWJsZSIsImNsaWVudF9idWlsZF9udW1iZXIiOjYwMDczLCJjbGllbnRfZXZlbnRfc291cmNlIjpudWxsfQ==");
+            req.Headers.Add("Authorization", DiscordLogging.userToken);
+            req.ContentLength = 0;
+            req.Timeout = 5000;
+
+            try
+            {
+                HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
+            }
+            catch (WebException) { }
         }
     }
 }
