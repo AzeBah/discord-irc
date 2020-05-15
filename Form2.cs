@@ -61,15 +61,6 @@ namespace WindowsFormsApp1
         }
 
 
-        private void CheckMessages()
-        {
-            channelMsgsTextBox.Text = "";
-            for (int i = DiscordChannel.messages.Count -1; i >= 0; i--)
-            {
-                channelMsgsTextBox.Text += DiscordChannel.messages[i].author.username + " : " + DiscordChannel.messages[i].content + Environment.NewLine;
-            }
-            channelMsgsTextBox.AppendText(" ");
-        }
 
         private void ClearMessageTextBox()
         {
@@ -90,6 +81,10 @@ namespace WindowsFormsApp1
                     {
                         int position = channelMsgsTextBox.Text.IndexOf(" ");
                         int amountOfMsgsToDelete = Convert.ToInt32(channelMsgsTextBox.Text.Substring(position+1));
+                        e.Handled = true;
+                        e.SuppressKeyPress = true;
+                        messageTextBox.Text = "";
+                        new Thread(() => DeleteMessages(amountOfMsgsToDelete)).Start();
                     }
                     catch (Exception)
                     {
@@ -115,5 +110,25 @@ namespace WindowsFormsApp1
         {
 
         }
+
+
+        private void CheckMessages()
+        {
+            channelMsgsTextBox.Text = "";
+            for (int i = DiscordChannel.messages.Count - 1; i >= 0; i--)
+            {
+                channelMsgsTextBox.Text += DiscordChannel.messages[i].author.username + " : " + DiscordChannel.messages[i].content + Environment.NewLine;
+            }
+            channelMsgsTextBox.AppendText(" ");
+        }
+
+        private void DeleteMessages(int amountToDelete)
+        {
+            for (int i = DiscordChannel.messages.Count - 1; i >= DiscordChannel.messages.Count - amountToDelete; i--)
+            {
+                DiscordChannel.DeleteMessage(DiscordChannel.messages[i].id);
+            }
+        }
+
     }
 }

@@ -136,7 +136,7 @@ namespace WindowsFormsApp1
 
 
         // request to delete a specific message in a specific message
-        public static void DeleteMessages(string messageID)
+        public static void DeleteMessage(string messageID)
         {
             HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create("https://discord.com/api/v6/channels/" + channelId + "/messages/" + messageID);
             req.Method = "DELETE";
