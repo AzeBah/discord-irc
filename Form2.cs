@@ -128,9 +128,11 @@ namespace WindowsFormsApp1
             {
                 amountToDelete = DiscordChannel.messages.Count;
             }
-            for (int i = 0; i < amountToDelete; i++)
+            
+            for (int i = 0; i < amountToDelete ; i++)
             {
-                DiscordChannel.DeleteMessage(DiscordChannel.messages[i].id);
+                DiscordChannel.DeleteMessage(DiscordChannel.messages[0].id);
+                Thread.Sleep(500);
             }
         }
 

@@ -91,6 +91,7 @@ namespace WindowsFormsApp1
                 using (StreamReader reader = new StreamReader(resp.GetResponseStream()))
                 {
                     string response = reader.ReadToEnd();
+                    messages.Clear();
                     messages = System.Text.Json.JsonSerializer.Deserialize<List<Message>> (response);
                 }
             }
