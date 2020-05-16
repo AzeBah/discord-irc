@@ -12,7 +12,7 @@ Features -
 
 
 # Commands
-- /delete 50 // this is a command to delete a specific amount of messages in the channel (50 in this case)
+- /delete 50 || this is a command to delete a specific amount of messages in the channel (50 in this case)
 
 # To-Do-List
 - Log with a token (user and/or bot token)
