@@ -8,9 +8,13 @@ Features -
 - Working retrieve channel messages
 - Working sending message to the discord channel
 - Keep the 50 last messages in the memory (less ram usage :p)
+- Self-Bot commands like "/delete 1" 
+
+
+# Commands
+- /delete 50 // this is a command to delete a specific amount of messages in the channel (50 in this case)
 
 # To-Do-List
-- Command to delete a specific amount of messages in the channel
 - Log with a token (user and/or bot token)
 
 # How-To-Use
