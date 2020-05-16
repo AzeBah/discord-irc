@@ -75,12 +75,12 @@ namespace WindowsFormsApp1
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (channelMsgsTextBox.Text.Contains("/delete"))
+                if (messageTextBox.Text.Contains("/delete"))
                 {
                     try
                     {
-                        int position = channelMsgsTextBox.Text.IndexOf(" ");
-                        int amountOfMsgsToDelete = Convert.ToInt32(channelMsgsTextBox.Text.Substring(position+1));
+                        int position = messageTextBox.Text.IndexOf(" ");
+                        int amountOfMsgsToDelete = Convert.ToInt32(messageTextBox.Text.Substring(position+1));
                         e.Handled = true;
                         e.SuppressKeyPress = true;
                         messageTextBox.Text = "";
