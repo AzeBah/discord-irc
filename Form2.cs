@@ -117,7 +117,7 @@ namespace WindowsFormsApp1
             channelMsgsTextBox.Text = "";
             for (int i = DiscordChannel.messages.Count - 1; i >= 0; i--)
             {
-                channelMsgsTextBox.Text += DiscordChannel.messages[i].author.username + " : " + DiscordChannel.messages[i].content + Environment.NewLine;
+                channelMsgsTextBox.Text += DiscordChannel.messages[i].author.username + "#" + DiscordChannel.messages[i].author.discriminator + " : " + DiscordChannel.messages[i].content + Environment.NewLine;
             }
             channelMsgsTextBox.AppendText(" ");
         }
