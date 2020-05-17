@@ -16,6 +16,7 @@ Features -
 
 # To-Do-List
 - Log with a token (user and/or bot token)
+- /dm username#id messageHere - command to send someone a specific message
 
 # How-To-Use
 1) Download this folder - https://github.com/AzeBah/discord-irc/releases/tag/0.1
