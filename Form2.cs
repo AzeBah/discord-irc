@@ -22,7 +22,8 @@ namespace WindowsFormsApp1
         private void Form2_Load(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(54, 57, 63);
-            if (DiscordLogging.isLogged == false)
+            StreamManip.LoadToken();
+            if (DiscordLogging.isLogged == true)
             {
                 this.Close();
             }
@@ -60,12 +61,6 @@ namespace WindowsFormsApp1
 
         }
 
-
-
-        private void ClearMessageTextBox()
-        {
-            messageTextBox.Text = "";
-        }
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
