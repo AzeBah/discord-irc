@@ -22,7 +22,10 @@ namespace WindowsFormsApp1
         {
             this.BackColor = Color.FromArgb(54, 57, 63);
             StreamManip.LoadToken();
-            CheckToken();
+            if (DiscordLogging.isLogged == true)
+            {
+                this.Close();
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -59,12 +62,5 @@ namespace WindowsFormsApp1
         }
 
 
-        private void CheckToken()
-        {
-            if (DiscordLogging.isLogged == true)
-            {
-                this.Close();
-            }
-        }
     }
 }

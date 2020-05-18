@@ -22,11 +22,6 @@ namespace WindowsFormsApp1
         private void Form2_Load(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(54, 57, 63);
-            StreamManip.LoadToken();
-            if (DiscordLogging.isLogged == true)
-            {
-                this.Close();
-            }
         }
 
         private void button1_Click(object sender, EventArgs e)
