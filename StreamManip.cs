@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
                 using (StreamReader reader = new StreamReader("token.txt"))
                 {
                     string line = reader.ReadLine();
-                    if (line == null)
+                    if (line != null)
                     {
                         DiscordLogging.isLogged = true;
                     }
