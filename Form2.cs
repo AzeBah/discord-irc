@@ -21,6 +21,10 @@ namespace WindowsFormsApp1
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            if (DiscordLogging.isLogged == false)
+            {
+                this.Close();
+            }
             this.BackColor = Color.FromArgb(54, 57, 63);
         }
 
