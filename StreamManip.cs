@@ -19,6 +19,7 @@ namespace WindowsFormsApp1
                     string line = reader.ReadLine();
                     if (line != null)
                     {
+                        DiscordLogging.userToken = line;
                         DiscordLogging.isLogged = true;
                     }
                 }
