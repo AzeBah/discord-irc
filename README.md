@@ -17,6 +17,8 @@ Features -
 # To-Do-List
 - /dm username#id messageHere - command to send someone a specific message
 - Show username of logged account
+- /notifications - get a list of unread channels/dm's
+- /join channelidhere - join a specific channel
 
 # How-To-Use
 1) Download this folder - https://github.com/AzeBah/discord-irc/releases/tag/0.2
