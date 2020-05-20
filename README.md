@@ -16,7 +16,6 @@ Features -
 
 # To-Do-List
 - /dm username#id messageHere - command to send someone a specific message
-- Show username of logged account
 - /notifications - get a list of unread channels/dm's
 - /join channelidhere - join a specific channel
 
@@ -31,7 +30,7 @@ Log in
 
 
 Watch a specific channel id for messages
-![WatchChannel](https://i.imgur.com/v2LjX1s.png)
+![WatchChannel](https://i.imgur.com/D2W9KSn.png)
 
 Send Message & intercept them<br/>
 ![SendMessage](https://i.imgur.com/Kxk0Yh5.gif)
