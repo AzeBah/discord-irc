@@ -21,10 +21,12 @@ namespace WindowsFormsApp1
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            DiscordLogging.GetLoggedInfos();
             if (DiscordLogging.isLogged == false)
             {
                 this.Close();
             }
+            loggedUser.Text = DiscordLogging.loggedUserAndDiscrim;
             this.BackColor = Color.FromArgb(54, 57, 63);
         }
 

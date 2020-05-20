@@ -90,13 +90,12 @@ namespace WindowsFormsApp1
 
 
 
-        private void GetLoggedInfos()
+        public static void GetLoggedInfos()
         {
             HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create("https://discord.com/api/v6/users/@me");
             req.Method = "GET";
             req.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36";
             req.Headers.Add("Authorization", DiscordLogging.userToken);
-
             try
             {
                 HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
