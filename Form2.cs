@@ -130,5 +130,9 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void loggedUser_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -34,6 +34,7 @@
             this.watchBtn = new System.Windows.Forms.Button();
             this.channelMsgsTextBox = new System.Windows.Forms.TextBox();
             this.messageTextBox = new System.Windows.Forms.TextBox();
+            this.loggedUser = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // channelIdTextBox
@@ -90,12 +91,25 @@
             this.messageTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.messageTextBox_KeyDown);
             this.messageTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.messageTextBox_KeyUp);
             // 
+            // loggedUser
+            // 
+            this.loggedUser.AutoSize = true;
+            this.loggedUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loggedUser.ForeColor = System.Drawing.Color.Lime;
+            this.loggedUser.Location = new System.Drawing.Point(739, 9);
+            this.loggedUser.Name = "loggedUser";
+            this.loggedUser.Size = new System.Drawing.Size(111, 20);
+            this.loggedUser.TabIndex = 5;
+            this.loggedUser.Text = "Logged user - ";
+            this.loggedUser.Click += new System.EventHandler(this.loggedUser_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(976, 441);
+            this.Controls.Add(this.loggedUser);
             this.Controls.Add(this.messageTextBox);
             this.Controls.Add(this.channelMsgsTextBox);
             this.Controls.Add(this.watchBtn);
@@ -121,5 +135,6 @@
         private System.Windows.Forms.Button watchBtn;
         private System.Windows.Forms.TextBox channelMsgsTextBox;
         private System.Windows.Forms.TextBox messageTextBox;
+        private System.Windows.Forms.Label loggedUser;
     }
 }
