@@ -13,12 +13,12 @@ Features -
 
 # Commands
 - /delete 50 || this is a command to delete a specific amount of messages in the channel (50 in this case)
+- /quit  - close app
 
 # To-Do-List
 - /dm username#id messageHere - command to send someone a specific message
 - /notifications - get a list of unread channels/dm's
 - /join channelidhere - join a specific channel
-- /quit  - close app
 
 # How-To-Use
 1) Download this folder - https://github.com/AzeBah/discord-irc/releases/tag/0.2
