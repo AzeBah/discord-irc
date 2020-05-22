@@ -76,7 +76,7 @@ namespace WindowsFormsApp1
                     try
                     {
                         int position = messageTextBox.Text.IndexOf(" ");
-                        int amountOfMsgsToDelete = Convert.ToInt32(messageTextBox.Text.Substring(position+1));
+                        int amountOfMsgsToDelete = Convert.ToInt32(messageTextBox.Text.Substring(position + 1));
                         e.Handled = true;
                         e.SuppressKeyPress = true;
                         messageTextBox.Text = "";
@@ -91,8 +91,12 @@ namespace WindowsFormsApp1
                         new Thread(() => DiscordChannel.SendMessage(messageToSend)).Start();
                     }
                 }
+                else if (messageTextBox.Text == "/quit")
+                {
+                    this.Close();
+                }
                 else
-                { 
+                {
                     e.Handled = true;
                     e.SuppressKeyPress = true;
                     this.messageToSend = messageTextBox.Text;
