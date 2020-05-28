@@ -19,6 +19,7 @@ Features -
 - /dm username#id messageHere - command to send someone a specific message
 - /notifications - get a list of unread channels/dm's
 - /join channelidhere - join a specific channel
+- Have an user presence(online/idle/dnd/offline) and be able to switch from one to another
 
 # How-To-Use
 1) Download this folder - https://github.com/AzeBah/discord-irc/releases/tag/0.2
