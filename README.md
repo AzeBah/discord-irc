@@ -19,6 +19,7 @@ Features -
 - /dm username#id messageHere - command to send someone a specific message
 - /notifications - get a list of unread channels/dm's
 - /join channelidhere - join a specific channel
+- /logout - does not close app like /quit command, reboot instead . (erase from token.txt too)
 - Have an user presence(online/idle/dnd/offline) and be able to switch from one to another
 - Use websocket connection instead of spamming http requests (less bandwidth uasge)
 
