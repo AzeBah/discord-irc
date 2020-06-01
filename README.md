@@ -13,7 +13,7 @@ Features -
 
 # Commands
 - /delete 50 || this is a command to delete a specific amount of messages in the channel (50 in this case)
-- /quit  - close app
+- /quit  - close app (token.txt is not erased)
 
 # To-Do-List
 - /dm username#id messageHere - command to send someone a specific message
