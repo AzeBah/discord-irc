@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -94,6 +95,20 @@ namespace WindowsFormsApp1
                 else if (messageTextBox.Text == "/quit")
                 {
                     this.Close();
+                }
+                else if (messageTextBox.Text == "/logout")
+                {
+                    e.Handled = true;
+                    e.SuppressKeyPress = true;
+                    messageTextBox.Text = "";
+                    try
+                    {
+                        using (StreamWriter writer = new StreamWriter("token.txt"))
+                        {
+                            writer.Flush();
+                        }
+                    }
+                    catch (FileNotFoundException) { }
                 }
                 else
                 {
