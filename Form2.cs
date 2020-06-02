@@ -109,6 +109,8 @@ namespace WindowsFormsApp1
                         }
                     }
                     catch (FileNotFoundException) { }
+                    Application.Restart();
+                    Environment.Exit(0);
                 }
                 else
                 {
