@@ -12,7 +12,7 @@ Features -
 - Log with a token (user and/or bot token)
 
 # Commands
-- /delete 50 || this is a command to delete a specific amount of messages in the channel (50 in this case)
+- /delete 50 - this is a command to delete a specific amount of messages in the channel (50 in this case)
 - /quit  - close app (token.txt is not erased)
 - /logout - log out of the current account & delete the token from token.txt (if any)
 
