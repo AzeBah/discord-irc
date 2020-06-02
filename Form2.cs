@@ -118,7 +118,14 @@ namespace WindowsFormsApp1
                     e.SuppressKeyPress = true;
                     this.messageToSend = messageTextBox.Text;
                     messageTextBox.Text = "";
-                    new Thread(() => DiscordChannel.SendMessage(messageToSend)).Start();
+                    if (channelIdTextBox.Text.Length == 0)
+                    {
+                        MessageBox.Show("Please join a channel before attempting to send a message");
+                    }
+                    else
+                    {
+                        new Thread(() => DiscordChannel.SendMessage(messageToSend)).Start();
+                    }
                 }
             }
         }
