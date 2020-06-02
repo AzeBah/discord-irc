@@ -14,12 +14,12 @@ Features -
 # Commands
 - /delete 50 || this is a command to delete a specific amount of messages in the channel (50 in this case)
 - /quit  - close app (token.txt is not erased)
+- /logout - log out of the current account & delete the token from token.txt (if any)
 
 # To-Do-List
 - /dm username#id messageHere - command to send someone a specific message
 - /notifications - get a list of unread channels/dm's
 - /join channelidhere - join a specific channel
-- /logout - does not close app like /quit command, reboot instead . (erase from token.txt too)
 - Have an user presence(online/idle/dnd/offline) and be able to switch from one to another
 - Use websocket connection instead of spamming http requests (less bandwidth uasge)
 
