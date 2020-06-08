@@ -118,6 +118,7 @@ namespace WindowsFormsApp1
                     {
                         int position = messageTextBox.Text.IndexOf(" ");
                         channelIdTextBox.Text = messageTextBox.Text.Substring(position + 1);
+                        watchBtn.PerformClick();
                         e.Handled = true;
                         e.SuppressKeyPress = true;
                         messageTextBox.Text = "";
