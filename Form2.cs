@@ -112,6 +112,25 @@ namespace WindowsFormsApp1
                     Application.Restart();
                     Environment.Exit(0);
                 }
+                else if (messageTextBox.Text.Contains("/join"))
+                {
+                    try
+                    {
+                        int position = messageTextBox.Text.IndexOf(" ");
+                        channelIdTextBox.Text = messageTextBox.Text.Substring(position + 1);
+                        e.Handled = true;
+                        e.SuppressKeyPress = true;
+                        messageTextBox.Text = "";
+                    }
+                    catch (Exception)
+                    {
+                        e.Handled = true;
+                        e.SuppressKeyPress = true;
+                        this.messageToSend = messageTextBox.Text;
+                        messageTextBox.Text = "";
+                        new Thread(() => DiscordChannel.SendMessage(messageToSend)).Start();
+                    }
+                }
                 else
                 {
                     e.Handled = true;
