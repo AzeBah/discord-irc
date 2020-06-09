@@ -64,7 +64,7 @@ namespace WindowsFormsApp1
     class DiscordChannel
     {
         private static Random randomNum = new Random();
-        private static string channelId;
+        public static string channelId;
         public static List<Message> messages = new List<Message>();
         public DiscordChannel(string channelID)
         {

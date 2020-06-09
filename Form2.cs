@@ -15,6 +15,7 @@ namespace WindowsFormsApp1
     public partial class Form2 : Form
     {
         private string messageToSend;
+        public static bool clickedWatchBtn = false;
         public Form2()
         {
             InitializeComponent();
@@ -47,15 +48,19 @@ namespace WindowsFormsApp1
 
         private async void watchBtn_Click(object sender, EventArgs e)
         {
-            await Task.Run(() =>
+            if (clickedWatchBtn != true)
             {
-                while (true)
+                clickedWatchBtn = true;
+                await Task.Run(() =>
                 {
-                    DiscordChannel channel = new DiscordChannel(channelIdTextBox.Text);
-                    BeginInvoke(new Action(CheckMessages));
-                    Thread.Sleep(500);
-                }
-            });
+                    while (true)
+                    {
+                        DiscordChannel channel = new DiscordChannel(channelIdTextBox.Text);
+                        BeginInvoke(new Action(CheckMessages));
+                        Thread.Sleep(500);
+                    }
+                });
+            }
         }
 
         private void channelMsgsTextBox_TextChanged(object sender, EventArgs e)
@@ -118,7 +123,11 @@ namespace WindowsFormsApp1
                     {
                         int position = messageTextBox.Text.IndexOf(" ");
                         channelIdTextBox.Text = messageTextBox.Text.Substring(position + 1);
-                        watchBtn.PerformClick();
+                        DiscordChannel.channelId = channelIdTextBox.Text;
+                        if (clickedWatchBtn != true)
+                        {
+                            watchBtn.PerformClick();
+                        }
                         e.Handled = true;
                         e.SuppressKeyPress = true;
                         messageTextBox.Text = "";
