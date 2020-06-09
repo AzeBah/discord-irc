@@ -24,7 +24,7 @@ Features -
 - Use websocket connection instead of spamming http requests (less bandwidth usage)
 
 # How-To-Use
-1) Download this folder - https://github.com/AzeBah/discord-irc/releases/tag/0.2
+1) Download this folder - https://github.com/AzeBah/discord-irc/releases/tag/0.2 - We update the release build once a week
 2) Run Discord.exe
 3) Use your account and feel free to modify the source code  
 **if you want to use a token to log in (user or bot), make a file named token.txt in the same folder as Discord.exe**
