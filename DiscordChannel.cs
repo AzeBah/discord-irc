@@ -78,6 +78,10 @@ namespace WindowsFormsApp1
         // request to get the 50 last messages sent in a specific channel
         private void GetMessagesFromChannel()
         {
+            if (channelId.Length != 18)
+            {
+                return;
+            }
             HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create("https://discord.com/api/v6/channels/" + channelId + "/messages?limit=50");
             req.Method = "GET";
             req.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36";
