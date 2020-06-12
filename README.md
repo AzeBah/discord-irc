@@ -22,6 +22,7 @@ Features -
 - /notifications - get a list of unread channels/dm's
 - Have an user presence(online/idle/dnd/offline) and be able to switch from one to another
 - Use websocket connection instead of spamming http requests (less bandwidth usage)
+- Write my own websocket implementation
 
 # How-To-Use
 1) Download this folder - https://github.com/AzeBah/discord-irc/releases/tag/0.2 - We update the release build once a week
