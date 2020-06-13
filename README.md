@@ -20,7 +20,7 @@ Features -
 # To-Do-List
 - /dm username#id messageHere - command to send someone a specific message
 - /notifications - get a list of unread channels/dm's
-- Have an user presence(online/idle/dnd/offline) and be able to switch from one to another
+- Have an user presence(online/idle/dnd/offline) and be able to switch from one to another - requires websocket
 - Use websocket connection instead of spamming http requests (less bandwidth usage)
 - Write my own websocket implementation
 
