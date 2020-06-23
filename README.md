@@ -1,5 +1,6 @@
 # discord-irc
 It's a custom irc discord client with self-bot functionalities
+We currently at version 0.2 & I will be promoting this discord client once we reach it's first version.
 
 
 Features -
